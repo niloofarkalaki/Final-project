@@ -44,6 +44,12 @@
                         <li class="nav-item">
                                 <a class="nav-link" href="/">{{ __('خانه') }}</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/aboutus">{{ __('درباره‌ی ما') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/contactus">{{ __('تماس با ما') }}</a>
+                            </li>
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('ورود') }}</a>
@@ -59,17 +65,20 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                   <li> <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('خروج') }}
                                     </a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="/myprofile">پروفایل من</a></li>
+                                    <li><a class="dropdown-item" href="/mypost">پست‌های من</a></li>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
-                                </div>
+                                </ul>
                             </li>
                         @endguest
                     </ul>

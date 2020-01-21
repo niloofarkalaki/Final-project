@@ -19,10 +19,10 @@ Route::get('/', function () {
     return view('home');
 });
 Route::get('/contactus', function () {
-    return view('contactus');
+    return view('menuitems/contactus');
 }); 
 Route::get('/aboutus', function () {
-    return view('aboutus');
+    return view('menuitems/aboutus');
 }); 
 Route::get('/login', function () {
     return view('login');
@@ -30,9 +30,16 @@ Route::get('/login', function () {
 Route::get('/userpage', function () {
     return view('userpage');
 }); 
+Route::get('/myprofile', function () {
+    return view('profiles/myprofile');
+}); 
+Route::get('/mypost', function () {
+    return view('posts/mypost');
+}); 
+
+
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
  
-Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
