@@ -26,7 +26,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-               <img src="images/logo.png" width="70">
+               <img src="images/logo.png" width="100">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -66,14 +66,15 @@
                                 </a>
 
                                 <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="/myprofile"> تغییر پروفایل من</a></li>
+                                    <li><a class="dropdown-item" href="/mypost">پست‌های من</a></li>
                                    <li> <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('خروج') }}
                                     </a>
                                     </li>
-                                    <li><a class="dropdown-item" href="/myprofile">پروفایل من</a></li>
-                                    <li><a class="dropdown-item" href="/mypost">پست‌های من</a></li>
+                                   
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
